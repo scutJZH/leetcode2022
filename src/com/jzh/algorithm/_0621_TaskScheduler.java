@@ -9,7 +9,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 // 思路： https://leetcode.cn/problems/task-scheduler/solution/tong-zi-by-popopop/
-public class _0621_task_scheduler {
+public class _0621_TaskScheduler {
     public int leastInterval(char[] tasks, int n) {
         int[] arr = new int[26];
         // 统计每个任务的数量

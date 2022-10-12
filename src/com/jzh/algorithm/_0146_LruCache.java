@@ -1,9 +1,7 @@
 package com.jzh.algorithm;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Queue;
 
 // 请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
 // 实现 LRUCache 类：
@@ -16,10 +14,10 @@ import java.util.Queue;
 
 
 // 思路：构造双向链表（一定要加尾指针，每次修改链表后都要注意prev和next是否赋值）
-public class _0146_lru_cache {
+public class _0146_LruCache {
 
     public static void main(String[] args) {
-        _0146_lru_cache lru = new _0146_lru_cache();
+        _0146_LruCache lru = new _0146_LruCache();
         lru.initLRUCache(2);
         lru.put(1, 1);
         lru.put(2, 2);
