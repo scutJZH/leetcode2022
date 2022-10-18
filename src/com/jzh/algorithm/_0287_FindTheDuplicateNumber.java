@@ -12,12 +12,12 @@ public class _0287_FindTheDuplicateNumber {
     }
 
     public static int findDuplicate(int[] nums) {
-        int[] temp = new int[nums.length];
+        boolean[] temp = new boolean[nums.length];
         for (int n : nums) {
-            if (temp[n] != 0) {
+            if (temp[n]) {
                 return n;
             }
-            temp[n] = 1;
+            temp[n] = true;
         }
         return 0;
     }
