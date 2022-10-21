@@ -14,11 +14,15 @@ public class _0206_ReverseLinkedList {
         ListNode n5 = new ListNode(5);
 
         n1.next = n2;
+        n2.pre = n1;
         n2.next = n3;
+        n3.pre = n2;
         n3.next = n4;
+        n4.pre = n3;
         n4.next = n5;
+        n5.pre = n4;
 
-        ListNode n = reverseList(n1);
+        ListNode n = reverseDoubleNode(n1);
         System.out.println(1);
     }
 
@@ -27,6 +31,19 @@ public class _0206_ReverseLinkedList {
         ListNode next = head;
         while (next != null) {
             ListNode node = next.next;
+            next.next = pre;
+            pre = next;
+            next = node;
+        }
+        return pre;
+    }
+
+    public static ListNode reverseDoubleNode(ListNode head) {
+        ListNode pre = null;
+        ListNode next = head;
+        while (next != null) {
+            ListNode node = next.next;
+            next.pre = node;
             next.next = pre;
             pre = next;
             next = node;
