@@ -1,4 +1,4 @@
-package com.jzh.algorithm;
+package com.jzh.leetcode;
 
 import java.util.Stack;
 

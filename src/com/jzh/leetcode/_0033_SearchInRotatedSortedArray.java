@@ -1,4 +1,4 @@
-package com.jzh.algorithm;
+package com.jzh.leetcode;
 
 
 // 整数数组 nums 按升序排列，数组中的值互不相同 。
