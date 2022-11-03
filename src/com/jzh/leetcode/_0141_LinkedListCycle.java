@@ -36,14 +36,11 @@ public class _0141_LinkedListCycle {
         }
 
         ListNode fast = head.next.next, slow = head.next;
-        while (fast.next != null && fast.next.next != null) {
-            if (fast == slow) {
-                return true;
-            }
+        while (fast.next != null && fast.next.next != null && fast != slow) {
             fast = fast.next.next;
             slow = slow.next;
         }
 
-        return false;
+        return fast == slow;
     }
 }
