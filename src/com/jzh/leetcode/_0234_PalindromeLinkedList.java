@@ -7,7 +7,7 @@ import com.jzh.util.ListNode;
 // 思路：
 // 解1：将链表的值放入数组进行比较
 // 解2：找到链表中点，反转链表，进行比较
-public class _234_PalindromeLinkedList {
+public class _0234_PalindromeLinkedList {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);

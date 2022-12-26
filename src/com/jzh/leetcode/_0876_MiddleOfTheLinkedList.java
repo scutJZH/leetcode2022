@@ -6,7 +6,7 @@ import com.jzh.util.ListNode;
 // 如果有两个中间结点，则返回第二个中间结点。
 
 // 思路：两次遍历
-public class _876_MiddleOfTheLinkedList {
+public class _0876_MiddleOfTheLinkedList {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);
