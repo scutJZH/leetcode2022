@@ -1,14 +1,22 @@
 package com.jzh.util;
 
+import java.util.List;
+
 public class Node {
     public int val;
     public Node next;
+    public List<Node> children;
     public Node random;
+
+    public Node() {}
 
     public Node(int val) {
         this.val = val;
-        this.next = null;
-        this.random = null;
+    }
+
+    public Node(int val, List<Node> children) {
+        this.val = val;
+        this.children = children;
     }
 
 }

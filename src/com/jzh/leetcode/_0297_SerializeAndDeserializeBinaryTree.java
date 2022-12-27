@@ -65,14 +65,14 @@ public class _0297_SerializeAndDeserializeBinaryTree {
         if (data == null || data.length() == 0) {
             return null;
         }
-        String[] arr = data.split(", ");
+        String[] arr = data.split(",");
 
         if (arr.length == 0 || "null".equals(arr[0])) {
             return null;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
-        TreeNode root = new TreeNode(Integer.parseInt(arr[0]));
+        TreeNode root = new TreeNode(Integer.parseInt(arr[0].trim()));
         queue.add(root);
         int i = 1;
 
@@ -80,7 +80,7 @@ public class _0297_SerializeAndDeserializeBinaryTree {
             TreeNode node = queue.poll();
             if (i < arr.length) {
                 if (!"null".equals(arr[i])) {
-                    node.left = new TreeNode(Integer.parseInt(arr[i]));
+                    node.left = new TreeNode(Integer.parseInt(arr[i].trim()));
                     queue.add(node.left);
                 }
                 i++;
