@@ -2,56 +2,51 @@ package com.jzh.leetcode;
 
 import com.jzh.util.TreeNode;
 
-// 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
-//百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+/**
+ * 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
+ * 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+ *
+ * 思路：递归
+ * 子树返回体：①是否已经有公共祖先；②是否含有p；③是否含有q
+ */
 public class _0236_LowestCommonAncestorOfABinaryTree {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        // 从root开始递归查找，如果p和q在同一个子树中，则还有更近的公共祖先，否则自身为最近的公共祖先。
-        TreeNode node = findPublicNode(root, p, q);
-        System.out.println(node.val);
-        return node;
+        return findAncestor(root, p, q).ancestor;
     }
 
-    public static TreeNode findPublicNode(TreeNode node, TreeNode p, TreeNode q) {
-        if (node == p || node == q) {
-            return node;
+    public static Info findAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null) {
+            return new Info(null, false, false);
         }
-        // 如果某一边没有子节点，则公共祖先肯定在另一边
-        if (node.left == null) {
-            return findPublicNode(node.right, p, q);
+
+        Info leftInfo = findAncestor(root.left, p, q);
+        Info rightInfo = findAncestor(root.right, p, q);
+
+        boolean findP = leftInfo.findP || rightInfo.findP || root == p;
+        boolean findQ = leftInfo.findQ || rightInfo.findQ || root == q;
+
+        TreeNode ancestor = null;
+        if (leftInfo.ancestor != null) {
+            ancestor = leftInfo.ancestor;
+        } else if (rightInfo.ancestor != null) {
+            ancestor = rightInfo.ancestor;
+        } else if (findP && findQ) {
+            ancestor = root;
         }
-        if (node.right == null) {
-            return findPublicNode(node.left, p, q);
-        }
-        // 两边都不为空的情况
-        boolean leftResult = findNode(node.left, p, q);
-        boolean rightResult = findNode(node.right, p, q);
-        // 若两边都存在p或q，则当前节点为公共祖先，若某一边不存在，则公共祖先在另一边
-        if (leftResult && rightResult) {
-            return node;
-        } else if (leftResult) {
-            return findPublicNode(node.left, p, q);
-        } else {
-            return findPublicNode(node.right, p, q);
-        }
+
+        return new Info(ancestor, findP, findQ);
     }
 
-    public static boolean findNode(TreeNode node, TreeNode p, TreeNode q) {
-        if (node == p || node == q) {
-            return true;
+    public static class Info {
+        public TreeNode ancestor;
+        public boolean findP;
+        public boolean findQ;
+
+        public Info(TreeNode ancestor, boolean findP, boolean findQ) {
+            this.ancestor = ancestor;
+            this.findP = findP;
+            this.findQ = findQ;
         }
-        if (node.left == null && node.right == null) {
-            return false;
-        }
-        boolean leftResult = false;
-        boolean rightResult = false;
-        if (node.left != null) {
-            leftResult = findNode(node.left, p, q);
-        }
-        if (node.right != null) {
-            rightResult = findNode(node.right, p, q);
-        }
-        return leftResult || rightResult;
     }
 }
