@@ -9,7 +9,7 @@ package com.jzh.leetcode;
 //
 // 注意：本题和 1038: https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/ 相同
 
-import com.jzh.util.TreeNode;
+import com.jzh.common.TreeNode;
 
 // 思路：由于对二叉搜索树进行中序遍历（先读左子树，再读自己，最后读右子树）是从小到大排序的，故反向中序遍历并进行累加即可得到累加树
 public class _0538_ConvertBstToGreaterTree {

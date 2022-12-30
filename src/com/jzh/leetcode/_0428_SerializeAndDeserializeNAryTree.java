@@ -1,6 +1,6 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.Node;
+import com.jzh.common.Node;
 
 import java.util.ArrayList;
 import java.util.Arrays;

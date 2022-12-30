@@ -1,4 +1,4 @@
-package com.jzh.util;
+package com.jzh.common;
 
 public class ListNode {
     public int val;

@@ -1,6 +1,6 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.ListNode;
+import com.jzh.common.ListNode;
 
 // 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点。
 // 思路：先检查头节点是否为val，再利用前后指针删除为val的节点

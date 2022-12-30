@@ -1,6 +1,6 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.TreeNode;
+import com.jzh.common.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

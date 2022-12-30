@@ -1,6 +1,6 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.TreeNode;
+import com.jzh.common.TreeNode;
 
 /**
  * 给定一棵二叉搜索树和其中的一个节点 p ，找到该节点在树中的中序后继。如果节点没有中序后继，请返回 null 。

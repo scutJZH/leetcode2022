@@ -1,6 +1,6 @@
 package com.jzh.self;
 
-import com.jzh.util.Node;
+import com.jzh.common.Node;
 
 /**
  * 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。两个链表可能存在相交节点，如果没有返回null。

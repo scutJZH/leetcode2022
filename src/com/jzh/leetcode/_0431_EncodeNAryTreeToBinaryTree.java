@@ -1,7 +1,7 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.Node;
-import com.jzh.util.TreeNode;
+import com.jzh.common.Node;
+import com.jzh.common.TreeNode;
 
 import java.util.*;
 

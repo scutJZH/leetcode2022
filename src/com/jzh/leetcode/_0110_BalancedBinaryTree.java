@@ -1,6 +1,6 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.TreeNode;
+import com.jzh.common.TreeNode;
 
 /**
  * 给定一个二叉树，判断它是否是高度平衡的二叉树。

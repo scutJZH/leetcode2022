@@ -1,4 +1,4 @@
-package com.jzh.util;
+package com.jzh.common;
 
 import java.util.List;
 

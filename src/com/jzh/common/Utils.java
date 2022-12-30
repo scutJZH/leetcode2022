@@ -1,4 +1,4 @@
-package com.jzh.util;
+package com.jzh.common;
 
 public class Utils {
     public static void showNums(int[] nums) {

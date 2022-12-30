@@ -1,6 +1,6 @@
 package com.jzh.leetcode;
 
-import com.jzh.util.ListNode;
+import com.jzh.common.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;
