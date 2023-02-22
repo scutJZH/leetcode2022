@@ -4,15 +4,17 @@ import com.jzh.common.ListNode;
 import java.util.ArrayList;
 import java.util.List;
 
-// 给定一个单链表 L 的头节点 head ，单链表 L 表示为：
-// L0 → L1 → … → Ln - 1 → Ln
-// 请将其重新排列后变为：
-// L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
-// 不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
-
-// 思路：
-// 解1：将链表放入容器中，前后指针操作容器进行重组
-// 解2：反转后半部分链表，进行拼接（通过快慢指针找中点）
+/**
+ * 给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+ * L0 → L1 → … → Ln - 1 → Ln
+ * 请将其重新排列后变为：
+ * L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+ * 不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+ *
+ * 思路：
+ * 解1：将链表放入容器中，前后指针操作容器进行重组
+ * 解2：反转后半部分链表，进行拼接（通过快慢指针找中点）
+ */
 public class _0143_ReorderList {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);

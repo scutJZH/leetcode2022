@@ -5,11 +5,14 @@ import com.jzh.common.ListNode;
 import java.util.HashSet;
 import java.util.Set;
 
-// 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null。
+/**
+ * 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null。
+ *
+ * 思路：
+ * 解1：利用容器
+ * 解2：相交后最后一个节点肯定是同一个，并且记录两个节点的长度，利用长度差n，让长的链表先走n步，再同时步长为1一起走，当相遇时则为相交的第一个点
+ */
 
-// 思路：
-// 解1：利用容器
-// 解2：相交后最后一个节点肯定是同一个，并且记录两个节点的长度，利用长度差n，让长的链表先走n步，再同时步长为1一起走，当相遇时则为相交的第一个点
 public class _0160_IntersectionOfTwoLinkedLists {
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {

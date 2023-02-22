@@ -131,10 +131,10 @@ public class _0200_NumberOfIslands {
 
             // 小集合合并到大集合
             if (numbers[i1Parent] >= numbers[i2Parent]) {
-                numbers[i1Parent] = numbers[i1Parent] +numbers[i2Parent];
+                numbers[i1Parent] = numbers[i1Parent] + numbers[i2Parent];
                 parents[i2Parent] = i1Parent;
             } else {
-                numbers[i2Parent] = numbers[i1Parent] +numbers[i2Parent];
+                numbers[i2Parent] = numbers[i1Parent] + numbers[i2Parent];
                 parents[i1Parent] = i2Parent;
             }
 

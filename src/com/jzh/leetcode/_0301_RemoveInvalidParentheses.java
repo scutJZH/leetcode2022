@@ -8,7 +8,7 @@ import java.util.*;
 // 思路：回溯法
 // 注意：
 // 我们在每次进行搜索时，如果遇到连续相同的括号我们只需要搜索一次即可
-// 比如当前遇到的字符串为 "(((())"\texttt{"(((())"}"(((())"，去掉前四个左括号中的任意一个，生成的字符串是一样的，均为 "((())"\texttt{"((())"}"((())"，
+// 比如当前遇到的字符串为 "(((())"，去掉前四个左括号中的任意一个，生成的字符串是一样的，均为 "((())"，
 // 因此我们在尝试搜索时，只需去掉一个左括号进行下一轮搜索，不需要将前四个左括号都尝试一遍。
 public class _0301_RemoveInvalidParentheses {
     public static void main(String[] args) {
@@ -20,7 +20,6 @@ public class _0301_RemoveInvalidParentheses {
         // 找到s中左右括号分别需要删除几个
         int leftNum = 0;
         int rightNum = 0;
-        Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (c == '(') {
                 leftNum++;

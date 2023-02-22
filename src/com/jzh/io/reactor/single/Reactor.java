@@ -26,7 +26,7 @@ public class Reactor implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
-                selector.select();
+                selector.select(); // 阻塞
                 Set<SelectionKey> selected = selector.selectedKeys();
                 Iterator<SelectionKey> it = selected.iterator();
                 while (it.hasNext()) {
@@ -43,6 +43,35 @@ public class Reactor implements Runnable {
         Runnable r = (Runnable) selectionKey.attachment();
         if (r != null) {
             r.run();
+        }
+    }
+
+    public static void main(String[] args) {
+        Selector selector = null;
+        ServerSocketChannel serverSocketChannel = null;
+        try {
+            selector = Selector.open();
+            serverSocketChannel = ServerSocketChannel.open();
+            serverSocketChannel.socket().bind(new InetSocketAddress(8080));
+            serverSocketChannel.configureBlocking(false);
+            SelectionKey selectionKey = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            while (!Thread.interrupted()) {
+                selector.select();
+                System.out.println(11111111);
+                Set<SelectionKey> selected = selector.selectedKeys();
+                Iterator<SelectionKey> it = selected.iterator();
+                while (it.hasNext()) {
+                    System.out.println(it.next());
+                }
+                selected.clear();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
